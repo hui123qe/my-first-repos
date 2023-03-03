@@ -73,7 +73,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>..\..\..\..\..\lib\$(PlatformToolset)_$(Platform)_$(Configuration)\</OutDir>
     <IntDir>..\..\..\..\..\bin\$(PlatformToolset)_$(Platform)_$(Configuration)\</IntDir>
-    <TargetName>$(ProjectName)_vc$(PlatformToolsetVersion)_$(PlatformArchitecture)</TargetName>
+    <TargetName>$(ProjectName)_$(PlatformToolset)_$(Platform)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
