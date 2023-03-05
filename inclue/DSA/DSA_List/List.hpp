@@ -68,7 +68,7 @@ public:
 	ListNodePosi(T) insertA(ListNodePosi(T) const p, T const e);//将e当作p的后续插入
 	ListNodePosi(T) insertB(ListNodePosi(T) const p, T const e);//将e当作p的前驱插入
 	T remove(ListNodePosi(T) const p);//删除节点p，返回删除节点的数据
-	void merge(List<T>&) { return merge(first(), size, L, L.first(), L._size); }//全表归并
+	void merge(List<T>& L) { return merge(first(), size, L, L.first(), L._size); }//全表归并
 	void sort(ListNodePosi(T) p, int n);//列表区间排序
 	void sort() { return sort(head->succ, _size); }//列表整体排序
 	int deduplicate(); //无序去重
@@ -219,7 +219,7 @@ int List<T>::deduplicate() //无序去重
 template<typename T>
 ListNodePosi(T) List<T>::Search(T const &e)//有序列表查找
 {
-	return Search(e, _size, traler);
+	return Search(e, _size, trailer);
 
 }
 template<typename T>
@@ -238,14 +238,13 @@ ListNodePosi(T) List<T>::Search(T const &e, int n, ListNodePosi(T) p)const//在p
 }
 
 template<typename T>
-int List<T>::disordered()const
+int List<T>::disordered() const
 {
 	int n = 0;
-	ListNodePosi(T) temp;
-	temp = head->succ;
-	if (int i = 0; i < _size; i++)
+	ListNodePosi(T) temp = head->succ;
+	for (int i = 0; i < _size; i++)
 	{
-		if (temp->data < temp->succ->data)
+		if (temp->data > temp->succ->data)
 		{
 			n++;
 		}
@@ -319,7 +318,7 @@ int List<T>::uniquify() //有序去重
 {
 	ListNodePosi(T) temp = head->succ;
 	ListNodePosi(T) temp1 = NULL;
-	while (temp != train)
+	while (temp != trailer)
 	{
 		temp = temp->succ;
 		if (temp->data == temp->pred->data)
@@ -453,7 +452,7 @@ void List<T>::MergeSort(ListNodePosi(T)& p, int n)
 	if (n < 2)return;
 	int m = n >> 1;
 	ListNodePosi(T) q = p;
-	for (i = 0; i < n; i++) { q = q->succ; }
+	for (int i = 0; i < n; i++) { q = q->succ; }
 	MergeSort(p, m); mergeSort(q, n - m);
 	merge(p, m, *this, q, n - m);
 
