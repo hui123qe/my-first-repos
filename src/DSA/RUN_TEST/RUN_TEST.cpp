@@ -1,9 +1,12 @@
+//#include<stdlib.h>
+#include"../../../inclue/DSA/DSA_List/List.hpp"
+#include"../../../inclue/DSA/DSA_Stack/Stack.hpp"
+#include"../../../inclue/DSA/DSA_Vector/Vector.hpp"
 
-#include"\my_folder\New folder (2)\my-first-repos\inclue\DSA\DSA_List\List.hpp"
 
 int main()
 {
-	List<int> list;
+	/*List<int> list;
 	list.InsertAsFirst(1);
 	list.InsertAsFirst(2);
 	list.InsertAsFirst(9);
@@ -12,7 +15,7 @@ int main()
 	list.InsertAsFirst(6);
 	list.InsertAsFirst(5);
 	list.InsertAsFirst(8);
-	list.print1();
-	system("pause");
+	list.print1();*/
+	//system("pause");
 	return 0;
 }

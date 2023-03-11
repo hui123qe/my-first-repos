@@ -1,13 +1,14 @@
 #pragma once
-#include<iostream>
+//#include<iostream>
+#include"../../../inclue/DSA/DSA_Vector/Vector.hpp"
 using namespace std;
 
 template<typename T>
-class Stack ::public Vector<T>
+class Stack :public Vector<T>
 {
 public:
 	void push(T const e) { return insert(e); }
-	T pop() { return remove(_size-1); }
-	T top() { return (this[_size - 1]; }
+	T pop() { return remove(this->size() - 1); }
+	T top() { return this[this->size() - 1]; }
 };
 
