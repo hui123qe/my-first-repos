@@ -186,7 +186,7 @@
     <OutDir>..\..\..\..\..\lib\$(PlatformToolset)_$(Platform)_$(Configuration)\</OutDir>
     <IntDir>..\..\..\..\..\bin\$(PlatformToolset)_$(Platform)_$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(PlatformToolset)_$(Platform)</TargetName>
-    <IncludePath>..\..\inclue\IMAGE\OpenCV_Core\opencv2;..\..\inclue\IMAGE\OpenCV_Core\;%(AdditionalIncludeDirectories);$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\..\..\inclue\IMAGE\OpenCV_Core\opencv2;..\..\..\..\..\inclue\IMAGE\OpenCV_Core\;%(AdditionalIncludeDirectories);$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\v143_x64_Debug\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
