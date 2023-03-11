@@ -69,5 +69,5 @@ public:
 	void print();
 
 };//Vector
-#pragma once
+
 
