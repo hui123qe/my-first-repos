@@ -1,1 +1,1 @@
-﻿
+﻿D:\visual studio\community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (..\..\..\..\..\bin\v143_x64_Debug\) contains files shared from another project (DSA_List.vcxproj, Opencv_Core.vcxproj, RUN_TEST.vcxproj).  This can lead to incorrect clean and rebuild behavior.

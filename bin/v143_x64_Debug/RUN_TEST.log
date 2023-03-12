@@ -1,1 +1,5 @@
-﻿
+﻿D:\visual studio\community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (..\..\..\..\..\bin\v143_x64_Debug\) contains files shared from another project (DSA_List.vcxproj, Opencv_Core.vcxproj, STL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  RUN_TEST.cpp
+F:\C++\New folder\my-first-repos\inclue\DSA\DSA_Vector\Vector.hpp(34,1): warning C4227: anachronism used: qualifiers on reference are ignored
+F:\C++\New folder\my-first-repos\inclue\DSA\DSA_Vector\Vector.hpp(71): message : see reference to class template instantiation 'Vector<T>' being compiled
+  RUN_TEST.vcxproj -> F:\C++\New folder\my-first-repos\lib\v143_x64_Debug\RUN_TEST_v143_x64.exe
