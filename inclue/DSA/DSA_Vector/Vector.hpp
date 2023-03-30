@@ -45,20 +45,21 @@ public:
 	Rank size()const { return _size; }//规模
 	bool empty() const { return !_size; }; //判空
 	int disordeered() const;//判断向量是否已经排序
-	Rank find(T const& e) const { return find(e, 0, _size); }//无序向量整体查找
-	Rank find(T const& e, Rank lo, Rank hi)const;//无序向量区间查找
+	Rank find(T const& e) { return find(e, 0, _size); }//无序向量整体查找
+	Rank find(T const& e, Rank lo, Rank hi);//无序向量区间查找
 	Rank search(T const& e)const //有序向量整体查找
 	{
 		return (0 >= _size) ? -1 : search(e, 0, _size);
 	}
-	Rank search(T const& e, Rank lo, Rank hi)const;//有序向量区间查找
+	Rank search(T const& e, Rank lo, Rank hi);//有序向量区间查找
 	//可写访问接口
-	T& operator[](Rank r)const;//重载下标操作符，可以类似于数组形式引用各元素
+	T operator[](Rank r);//重载下标操作符，可以类似于数组形式引用各元素
 	Vector<T>& operator =(Vector<T> const&);//重载赋值操作符，以便直接克隆向量
 	T remove(Rank r);//删除秩为r的元素
 	int remove(Rank lo, Rank hi);//删除秩在区间【lo,hi)之内的元素
-	Rank insert(Rank r, T const& e);// 插入元素
-	//Rank insert(T const& e) { return  insert(_size, e); }//默认作为末元素插入
+	Rank insert(Rank const r, T const& e);// 插入元素
+	Rank insert(T const& e) { return  insert(_size, e); }//默认作为末元素插入
+	bool isSort();
 	void sort(Rank lo, Rank hi);//对[lo,ho)排序
 	void unsort(Rank lo, Rank hi);//对[lo,hi)置乱
 	int deduplicate();//无序去重
@@ -69,5 +70,135 @@ public:
 	void print();
 
 };//Vector
-#pragma once
 
+template<typename T>
+void Vector<T>::copyFrom(T const* A, Rank lo, Rank hi)
+{
+	_elem = new T[_capacity = (hi - lo) * 2];
+	_size = 0;
+	while (lo<hi)
+	{
+		_elem[_size++] = A[lo++];
+	}
+}
+template<typename T>
+void  Vector<T>::expand()
+{
+	if (_size > _capacity / 2)
+	{
+		T *new_elem = new T[_capacity * 2];
+		for (int i = 0; i < _size; i++)
+		{
+			new_elem[i] = _elem[i];
+		}
+		delete _elem;
+		_elem = new_elem;
+		_capacity *= 2;
+	}
+	else return;
+}
+template<typename T>
+Rank Vector<T>::insert(Rank const r, T const& e)
+{
+	int ho = _size;
+	while (ho > r)
+	{
+		_elem[ho--] = _elem[ho-1];
+	}
+	_elem[r] = e;
+	_size++;
+	return  _size;
+}
+
+template<typename T>
+void Vector<T>::print()
+{
+	for (int i = 0; i < _size; i++)
+	{
+		cout << _elem[i]<<" ";
+	}
+	cout << endl;
+
+}
+
+template<typename T>
+Rank Vector<T>::find(T const& e, Rank lo, Rank hi)
+{
+	while (lo++ < hi)
+	{
+		if (_elem[lo] == e)return lo;
+	}
+	return 0;
+}
+
+template<typename T>
+Rank Vector<T>::search(T const& e, Rank lo, Rank hi)
+{
+	int num = 0;
+	while (lo++ < hi)
+	{
+		if (_elem[lo] == e)num++;
+	}
+	return num;
+}
+template<typename T>
+T Vector<T>::operator[](Rank r)
+{
+	if (r > _size)return 0;
+	return _elem[r];
+}
+
+template<typename T>
+Vector<T>& Vector<T>::operator=(Vector<T> const& a)
+{
+	if (this->_capacity < a._capacity)
+	{
+		T *_elem_new = new T[a._capacity];
+		delete _elem;
+		_elem = _elem_new;
+		_size = a._size;
+	}
+	for (int i = 0; i <a._size; i++)
+	{
+		_elem[i] = a._elem[i];
+	}
+	return *this;
+}
+template<typename T>
+T Vector<T>::remove(Rank r)
+{
+	int a = _elem[r - 1];
+	while (r < _size)
+	{
+		_elem[r-1] = _elem[r++];
+	}
+	_size--;
+	return a;
+}
+template<typename T>
+int  Vector<T>::remove(Rank lo, Rank hi)
+{
+	int _size_new = _size - (hi - lo);
+	while (_size_new<_size)
+	{
+		_elem[lo++] = _elem[hi++];
+		_size--;
+	}
+	return _size;
+}
+
+template<typename T>
+bool  Vector<T>::isSort()
+{
+	for (int i = 1; i < _size; i++)
+	{
+		if (_elem[i] < _elem[i - 1])return false;
+	}
+	return true;
+}
+
+template<typename T>
+void Vector<T>::shrink()//shrink the space;
+{
+	if(_size>_capacity/2)
+}

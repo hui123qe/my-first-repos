@@ -1,1 +1,6 @@
-﻿
+﻿  Stack.cpp
+c:\myfoder\new folder\my-first-repos\inclue\dsa\dsa_vector\vector.hpp(34): warning C4227: anachronism used: qualifiers on reference are ignored
+  c:\myfoder\new folder\my-first-repos\inclue\dsa\dsa_vector\vector.hpp(71): note: see reference to class template instantiation 'Vector<T>' being compiled
+Stack.obj : error LNK2019: unresolved external symbol "public: int __cdecl Vector<char>::insert(int,char const &)" (?insert@?$Vector@D@@QEAAHHAEBD@Z) referenced in function "public: int __cdecl Vector<char>::insert(char const &)" (?insert@?$Vector@D@@QEAAHAEBD@Z)
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\myfoder\New folder\my-first-repos\STLandIMAGE\vs2015\x64\Debug\DSA_Stack.exe : fatal error LNK1120: 2 unresolved externals

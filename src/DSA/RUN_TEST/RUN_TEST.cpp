@@ -6,16 +6,29 @@
 
 int main()
 {
-	/*List<int> list;
-	list.InsertAsFirst(1);
-	list.InsertAsFirst(2);
-	list.InsertAsFirst(9);
-	list.InsertAsFirst(4);
-	list.InsertAsFirst(15);
-	list.InsertAsFirst(6);
-	list.InsertAsFirst(5);
-	list.InsertAsFirst(8);
-	list.print1();*/
-	//system("pause");
+	
+	int A[8];
+	for (int i = 0; i < 8; i++)
+	{
+		A[i] = i;
+	}
+	Vector<int> vector(A, 8);
+	vector.insert(1);
+	vector.insert(1, 10);
+	vector.insert(9);
+	//vector.print();
+	//cout << vector.find(0) << endl;
+	//cout << vector[1] << endl;
+	Vector<int> vector1;
+	vector1= vector;
+	vector1.print();
+	cout << endl;
+	cout <<  vector1.remove(2)<<endl;
+	cout << endl;
+	vector1.print();
+	cout << vector1.remove(2, 6) << endl;
+	vector1.print();
+
+	system("pause");
 	return 0;
 }
