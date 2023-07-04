@@ -18,9 +18,6 @@
     <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_Stack\Stack.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_Stack\Stack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\src\DSA\DSA_Stack\Stack.cpp">

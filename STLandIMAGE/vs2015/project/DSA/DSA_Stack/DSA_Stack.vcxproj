@@ -110,7 +110,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_Stack\Stack.h" />
     <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_Stack\Stack.hpp" />
   </ItemGroup>
   <ItemGroup>

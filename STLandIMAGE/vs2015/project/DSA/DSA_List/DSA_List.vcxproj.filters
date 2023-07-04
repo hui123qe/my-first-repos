@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_List\List.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_List\List.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

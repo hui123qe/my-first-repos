@@ -73,10 +73,13 @@ public:
 	void sort() { return sort(head->succ, _size); }//列表整体排序
 	int deduplicate(); //无序去重
 	int uniquify(); //有序去重
-	void reverse(); //前后倒置（习题）					//遍历
+	void reverse(); //前后倒置（习题）
+					//遍历
 	void traverse(void(*vist) (T&)); //遍历各节点,依次实施指定操作(函数指针，只读或局部修改)
 	template <typename VST>
-	void traverse(VST&); // 遍历，依次实斲visit操作（函数对象，可全尿性修改）	void print1();
+	void traverse(VST&); // 遍历，依次实斲visit操作（函数对象，可全尿性修改）
+
+	void print1();
 
 	void print1()
 	{

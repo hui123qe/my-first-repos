@@ -114,7 +114,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_List\List.h" />
     <ClInclude Include="..\..\..\..\..\inclue\DSA\DSA_List\List.hpp" />
   </ItemGroup>
   <ItemGroup>
